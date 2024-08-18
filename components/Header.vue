@@ -2,16 +2,19 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { getCurrentLocalTime } from '../utils/time'
 
-const currentTime = ref(getCurrentLocalTime())
+const currentTime = ref('')
+
+let interval
 
 onMounted(() => {
-  const interval = setInterval(() => {
+  currentTime.value = getCurrentLocalTime()
+  interval = setInterval(() => {
     currentTime.value = getCurrentLocalTime()
   }, 1000)
+})
 
-  onBeforeUnmount(() => {
-    clearInterval(interval)
-  })
+onBeforeUnmount(() => {
+  if (interval) clearInterval(interval)
 })
 </script>
 
@@ -23,7 +26,9 @@ onMounted(() => {
         <NuxtLink to="/events">Events</NuxtLink>
       </li>
       <li>
-        <span>{{ currentTime }}</span>
+        <ClientOnly>
+          <span>{{ currentTime }}</span>
+        </ClientOnly>
       </li>
     </ul>
   </header>

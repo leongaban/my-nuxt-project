@@ -1,11 +1,15 @@
+import { defineNuxtConfig } from 'nuxt/config'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  alias: {
-    '@': '/'
-  },
+  alias: { '@': '/' },
   modules: [], // Add any Nuxt modules you need here
+  hooks: {
+    ready: () => {
+      console.log('Nuxt is ready!')
+    }
+  },
   components: true,
   ssr: true,
   css: ['~/assets/css/main.css'],
