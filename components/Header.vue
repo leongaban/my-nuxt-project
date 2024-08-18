@@ -23,6 +23,7 @@ onBeforeUnmount(() => {
     <ul>
       <li>
         <NuxtLink to="/">Home</NuxtLink>
+        <NuxtLink to="/crypto">Crypto</NuxtLink>
         <NuxtLink to="/events">Events</NuxtLink>
       </li>
       <li>

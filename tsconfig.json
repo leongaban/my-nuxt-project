@@ -1,7 +1,10 @@
 {
   // https://nuxt.com/docs/guide/concepts/typescript
   "compilerOptions": {
-    "types": ["@nuxt/types"]
+    "types": ["@nuxt/types"],
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
   "extends": "./.nuxt/tsconfig.json",
   "exclude": ["node_modules", "nuxt.config.ts"]

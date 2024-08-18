@@ -1,22 +1,24 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  // devtools: { enabled: true },
+  debug: true,
   alias: { '@': '/' },
-  modules: [], // Add any Nuxt modules you need here
-  hooks: {
-    ready: () => {
-      console.log('Nuxt is ready!')
-    }
-  },
-  components: true,
+  modules: [],
   ssr: true,
   css: ['~/assets/css/main.css'],
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {}
+    }
+  },
+  nitro: {
+    devProxy: {
+      '/api': {
+        target: 'https://mockapi.io/',
+        changeOrigin: true
+      }
     }
   }
 })

@@ -1,7 +1,6 @@
+<!-- SSRCryptoList.vue -->
 <template>
-  <div>
-    <h1>Index Page</h1>
-  </div>
+  <h2>Index Page</h2>
 </template>
 
-<script setup lang="ts"></script>
+<script setup></script>
