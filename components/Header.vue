@@ -22,8 +22,8 @@ onBeforeUnmount(() => {
   <header class="mb-10">
     <ul>
       <li>
-        <NuxtLink to="/">Home</NuxtLink>
-        <NuxtLink to="/events">Events</NuxtLink>
+        <NuxtLink to="/">Home</NuxtLink> |
+        <NuxtLink to="/dashboard">Dashboard</NuxtLink>
       </li>
       <li>
         <ClientOnly>
